@@ -1,0 +1,14 @@
+
+.content-wrapper {
+    min-height: calc(100vh - 150px); /* Ajusta a altura para garantir que o rodapé fique no final da pagina */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

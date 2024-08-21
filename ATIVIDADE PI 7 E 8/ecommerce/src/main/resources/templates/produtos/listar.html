@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Produtos Disponíveis</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="produto : ${produtos}">
+                    <td th:text="${produto.nome}">Produto</td>
+                    <td th:text="${produto.descricao}">Descrição</td>
+                    <td th:text="${T(com.exemplo.ecommerce.util.NumberFormatterUtil).formatCurrency(produto.preco)}">Preço</td>
+                    <td th:text="${produto.categoria}">Categoria</td>
+                    <td>
+                        <a th:href="@{/produtos/editar/{id}(id=${produto.id})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{/produtos/deletar/{id}(id=${produto.id})}" class="btn btn-danger">Deletar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/produtos/novo" class="btn btn-success">Adicionar Novo Produto</a>
+    </div>
+    
+    <footer class="text-center mt-5">
+        &copy; 2024 E-commerce. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
+
+
+
+
+
