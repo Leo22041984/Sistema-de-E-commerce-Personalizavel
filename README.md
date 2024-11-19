@@ -8,7 +8,7 @@
 
  - Linguaagem: Java
  - Banco de Dados: MySQL 
- - API: NetBeans, VsCode
+ - IDE: NetBeans, VsCode
  - Conexão: JDBC
  - Front-end: HTML5, CSS3, JavaScript, Bootstrap.
  - Back-end: Spring Boot.
